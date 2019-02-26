@@ -1,0 +1,33 @@
+title: Association 404
+description: Association des élèves du CFPT informatique
+baseurl: "/"
+url: "https://404.gg"
+repo: "404gg/404gg.github.io" # GitHub repository name used for the “Edit” link
+
+# Event banner settings
+eventbanner:
+  show: false
+  text: Assemblée générale le lundi 31 février !
+  url: "/blog/2019/02/17/bienvenue-sur-notre-nouveau-site.html"
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  proces-verbaux:
+    permalink: /proces-verbaux/:path
+    output: true
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .editorconfig

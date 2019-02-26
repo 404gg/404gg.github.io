@@ -1,0 +1,72 @@
+---
+layout: base
+---
+
+<header class="home-header">
+  <div class="container">
+    <h1>
+      <span>Notre but :<br>ton bien-être.</span>
+    </h1>
+
+    <p>
+      Nous sommes <strong>404</strong>, l’association des élèves
+      du <a href="https://edu.ge.ch/site/cfpt-informatique/">CFPT informatique</a>.
+    </p>
+  </div>
+
+  <div class="home-header-overlay" role="presentation"></div>
+</header>
+
+<main class="page-content" aria-label="Content">
+  <div class="container">
+    <h2>Que faisons-nous ?</h2>
+
+    <div class="activities row">
+      <div class="col-md">
+        <p class="activity">
+          <i class="activity-icon">🤝</i>
+          <span>Nous aidons les élèves en en cas de pépin avec les cours, les profs ou la direction.</span>
+        </p>
+      </div>
+      <div class="col-md">
+        <p class="activity">
+          <i class="activity-icon">🍽</i>
+          <span>Nous entretenons une <a href="{{ "/cafeteria" | relative_url }}">cafétéria étudiante</a> à Rhône.</span>
+        </p>
+      </div>
+      <div class="col-md">
+        <p class="activity">
+          <i class="activity-icon">🎮</i>
+          <span>Nous organisons des évènements pour animer la vie scolaire.</span>
+        </p>
+      </div>
+    </div>
+
+    {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">
+      Dernières nouvelles
+    </h2>
+    <div class="list-group posts-list">
+      {%- for post in site.posts -%}
+      <a class="list-group-item" href="{{ post.url | relative_url }}">
+        <h3>{{ post.title | escape }}</h3>
+
+        <p class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ post.date | date: "%m/%d/%Y" }}
+          </time>
+          {%- if post.author -%}
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ post.author | escape
+              }}</span></span>
+          {%- endif -%}
+        </p>
+
+        <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+      </a>
+      {%- endfor -%}
+    </div>
+
+    {%- endif -%}
+  </div>
+  </div>
+</main>
